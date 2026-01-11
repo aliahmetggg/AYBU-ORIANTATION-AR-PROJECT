@@ -229,8 +229,11 @@ Runtime'da 3D avatar olusturan sinif.
 ---
 
 ## Ekran Goruntuleri
+![projess0](https://github.com/user-attachments/assets/e433cca5-c2e1-430d-98d8-180f299ade25)
+![projess1](https://github.com/user-attachments/assets/50cfa48b-57ce-484c-80e5-e76ebcc9a921)
+![projess2](https://github.com/user-attachments/assets/3c313471-50e0-4831-9f52-4ac5759948df)
+![projess3](https://github.com/user-attachments/assets/2577a6de-b489-4efc-bbcc-43b3b4c7fbc6)
 
-> Ekran goruntuleri eklenecek
 
 <!--
 | Ana Ekran | AR Gorunumu | Harita |
@@ -272,7 +275,7 @@ Bu proje MIT lisansi altinda lisanslanmistir. Detaylar icin [LICENSE](LICENSE) d
 
 ## Iletisim
 
-**Gelistirici:** [Isim Soyisim]
+**Gelistirici:** Ali Ahmet Taşkesen
 
 **Kurum:** Ankara Yildirim Beyazit Universitesi
 
