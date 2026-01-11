@@ -1,0 +1,176 @@
+=====================================================
+AYBU ORIENTATION - Unity Kurulum Rehberi
+=====================================================
+
+Bu rehber, script'lerin Unity Editor'da nasıl kurulacağını açıklar.
+
+=====================================================
+ADIM 1: TextMeshPro Kurulumu
+=====================================================
+1. Window > Package Manager
+2. "TextMeshPro" ara ve kur
+3. Window > TextMeshPro > Import TMP Essential Resources
+
+=====================================================
+ADIM 2: GameManager Objesi Oluştur
+=====================================================
+1. Hierarchy'de sağ tık > Create Empty
+2. Adını "GameManager" yap
+3. Inspector'da Add Component:
+   - GPSManager
+   - LocationVerifier
+   - ScoreManager
+   - AvatarManager
+   - GameManager
+
+=====================================================
+ADIM 3: Campus Locations Data Oluştur
+=====================================================
+1. Project panelinde Assets klasöründe sağ tık
+2. Create > AYBU > Campus Locations Data
+3. Adını "AYBULocations" yap
+4. Inspector'da lokasyonları ekle:
+
+   Örnek Lokasyonlar:
+
+   [Kütüphane]
+   - Location ID: kutuphane
+   - Location Name: Kütüphane
+   - Description: AYBU Merkez Kütüphanesi
+   - Latitude: 39.XXXXX (AYBU koordinatı)
+   - Longitude: 32.XXXXX
+   - Radius: 25
+   - Reference Image Name: kutuphane_marker
+   - Score Value: 10
+
+   [Mescit]
+   - Location ID: mescit
+   - Location Name: Mescit
+   - Description: Kampüs Mescidi
+   - Latitude: 39.XXXXX
+   - Longitude: 32.XXXXX
+   - Radius: 15
+   - Reference Image Name: mescit_marker
+   - Score Value: 10
+
+=====================================================
+ADIM 4: Avatar Prefab Oluştur
+=====================================================
+1. Hierarchy > 3D Object > Sphere
+2. Scale: (0.3, 0.3, 0.3)
+3. Material: Mavi renk ata
+4. Add Component: SimpleAvatar
+5. Add Component: Sphere Collider (isTrigger = false)
+6. Prefabs klasörüne sürükle, adı "CollectableAvatar"
+
+=====================================================
+ADIM 5: UI Canvas Oluştur
+=====================================================
+1. Hierarchy > UI > Canvas
+2. Canvas Scaler:
+   - UI Scale Mode: Scale With Screen Size
+   - Reference Resolution: 1080 x 1920
+
+3. Canvas altına şunları ekle:
+
+   [MainMenuPanel]
+   - Panel (tam ekran)
+   - Text (TMP): "AYBU ORIENTATION" - Başlık
+   - Text (TMP): Alt başlık
+   - Button: "BAŞLA"
+   - Button: "HARİTA"
+   - Button: "SIFIRLA"
+   - Text (TMP): Skor ve ilerleme
+   - Add Component: MainMenuUI
+
+   [GameHUDPanel]
+   - Panel (üst kısım)
+   - Text (TMP): Skor
+   - Text (TMP): Lokasyon
+   - Text (TMP): Toplanan/Toplam
+   - Button: Harita butonu
+   - Button: Menü butonu
+   - Add Component: HUDController
+
+   [MapPanel]
+   - Panel (popup)
+   - Image: Placeholder harita
+   - Button: Kapat
+   - Add Component: MapUI
+
+   [Harita İşareti Prefab]
+   - UI > Image (küçük daire)
+   - Prefabs klasörüne kaydet
+
+=====================================================
+ADIM 6: UIManager Kurulumu
+=====================================================
+1. Canvas'a Add Component: UIManager
+2. Inspector'da panelleri ata:
+   - Main Menu Panel
+   - Game HUD Panel
+   - Map Panel
+3. AR Session Origin'i ata
+
+=====================================================
+ADIM 7: Referansları Bağla
+=====================================================
+
+GameManager objesinde:
+- Campus Data: AYBULocations asset'i
+
+LocationVerifier'da:
+- Campus Data: AYBULocations
+- Image Manager: AR Session Origin'deki ARTrackedImageManager
+
+ScoreManager'da:
+- Campus Data: AYBULocations
+
+MainMenuUI'da:
+- Butonları ve text'leri bağla
+- Campus Data: AYBULocations
+
+HUDController'da:
+- Text'leri ve butonları bağla
+- Campus Data: AYBULocations
+
+MapUI'da:
+- Harita image
+- Marker prefab
+- Campus Data: AYBULocations
+
+=====================================================
+ADIM 8: AR Referans Görselleri Ekle
+=====================================================
+1. XR > MyTrackingLibrary asset'i aç
+2. Her lokasyon için referans görsel ekle
+3. Görsel adları LocationData'daki referenceImageName ile eşleşmeli
+
+=====================================================
+ADIM 9: Android Build Ayarları
+=====================================================
+1. Edit > Project Settings > Player
+2. Android sekmesi:
+   - Other Settings > Location Usage Description ekle
+
+3. File > Build Settings
+4. Android seçili, Build
+
+=====================================================
+TEST
+=====================================================
+1. Unity Editor'da Play
+2. GPS simülasyonu için GPSManager'da:
+   - Inspector'da test koordinatlarını gir
+   - Sağ tık > "Simulate GPS Update"
+3. AR simülasyonu için XR Simulation kullan
+
+=====================================================
+GPS KOORDİNATLARI BELİRLEME
+=====================================================
+1. Telefonunda Google Maps aç
+2. Lokasyona git, parmağını basılı tut
+3. Koordinatları not al
+4. CampusLocationsData'ya ekle
+
+=====================================================

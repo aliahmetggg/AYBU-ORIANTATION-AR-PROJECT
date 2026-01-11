@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: AYBULocations
+  m_EditorClassIdentifier: Assembly-CSharp::CampusLocationsData
+  locations:
+  - locationId: kutuphane
+    locationName: "K\xFCt\xFCphane"
+    description: "AYBU Merkez K\xFCt\xFCphanesi"
+    latitude: 39.9334
+    longitude: 32.8597
+    radius: 25
+    referenceImageName: kutuphane_marker
+    additionalImageNames: []
+    avatarPrefab: {fileID: 0}
+    scoreValue: 10
+    isCollected: 0
+    isDiscovered: 0
+  - locationId: mescit
+    locationName: Mescit
+    description: "AYBU Kamp\xFCs Mescidi"
+    latitude: 39.9712
+    longitude: 32.8182
+    radius: 30
+    referenceImageName: aybu_mescid1
+    additionalImageNames:
+    - aybu_mescid2
+    - aybu_mescid3
+    avatarPrefab: {fileID: 0}
+    scoreValue: 15
+    isCollected: 0
+    isDiscovered: 0
+  - locationId: yemekhane
+    locationName: Yemekhane
+    description: Merkez Yemekhane
+    latitude: 39.933
+    longitude: 32.859
+    radius: 30
+    referenceImageName: yemekhane_marker
+    additionalImageNames: []
+    avatarPrefab: {fileID: 0}
+    scoreValue: 10
+    isCollected: 0
+    isDiscovered: 0
+  - locationId: rektorluk
+    locationName: "Rekt\xF6rl\xFCk"
+    description: "AYBU Rekt\xF6rl\xFCk Binas\u0131"
+    latitude: 39.9345
+    longitude: 32.861
+    radius: 20
+    referenceImageName: rektorluk_marker
+    additionalImageNames: []
+    avatarPrefab: {fileID: 0}
+    scoreValue: 15
+    isCollected: 0
+    isDiscovered: 0
+  - locationId: spor_salonu
+    locationName: Spor Salonu
+    description: "Kapal\u0131 Spor Salonu"
+    latitude: 39.9325
+    longitude: 32.858
+    radius: 25
+    referenceImageName: spor_marker
+    additionalImageNames: []
+    avatarPrefab: {fileID: 0}
+    scoreValue: 10
+    isCollected: 0
+    isDiscovered: 0
